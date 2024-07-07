@@ -1,0 +1,35 @@
+main{
+  background-color: var(--main-bg);
+}
+
+.search-section{
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-input{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  border-radius: 10px;
+  background-color: var(--secondary-bg);
+}
+.search-input svg{
+  height: 15px;
+  width: 10%;
+}
+.search-input svg path{
+  fill: var(--main-text);
+}
+.search-input input{
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 90%;
+  border:  transparent;
+  outline: none;
+  background-color: transparent;
+  color: var(--main-text);
+}

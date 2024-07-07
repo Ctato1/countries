@@ -1,0 +1,61 @@
+svg{
+  width: 15px;
+  height: 15px;
+}
+header{
+  background: var(--secondary-bg);
+  padding: 20px 0px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+  color: var(--main-text);
+}
+
+.header h1 {
+  font-size: .7rem;
+  margin: 0;
+
+}
+
+.dark-mode{
+  cursor: pointer;
+  font-size: .5rem;
+}
+
+@media screen and (min-width: 300px)
+{
+  .header h1 {
+    font-size: 1rem;
+  }
+
+  .dark-mode{
+    font-size: .9rem;
+  }
+}
+
+@media screen and (min-width: 375px)
+{
+  svg{
+    width: 25px;
+    height: 25px;
+  }
+  .header h1 {
+    font-size: 1.1rem;
+  }
+
+  .dark-mode{
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px)
+{
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .dark-mode{
+    font-size: 1.1rem;
+  }
+}

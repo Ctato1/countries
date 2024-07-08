@@ -8,10 +8,13 @@ import {CountriesService} from "../shared/countries.service";
 })
 export class CountriesComponent implements OnInit{
   cards!:any;
+  inputValue!:string;
   constructor(private countriesService:CountriesService) {
   }
   ngOnInit() {
     this.cards = this.countriesService.countries;
-    console.log(this.countriesService.countries)
+  }
+  onChange(){
+    this.cards = this.countriesService.countries.filter((item:any) => item?.name.toLowerCase().includes(this.inputValue.toLowerCase()))
   }
 }

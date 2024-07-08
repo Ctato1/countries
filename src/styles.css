@@ -23,4 +23,5 @@
 body{
   font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
+  background-color: var(--main-bg) !important;
 }

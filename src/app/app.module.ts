@@ -9,7 +9,8 @@ import { CountryComponent } from './country/country.component';
 import { HeaderComponent } from './header/header.component';
 import {HttpClientModule} from "@angular/common/http";
 import { CardComponent } from './countries/card/card.component';
-
+import { DropdownModule } from 'primeng/dropdown';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,9 @@ import { CardComponent } from './countries/card/card.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DropdownModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     provideClientHydration()

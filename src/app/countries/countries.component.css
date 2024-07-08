@@ -1,3 +1,48 @@
+/* For custom width and border-radius */
+p-dropdown{
+  border:none;
+  outline:none;
+}
+
+:host ::ng-deep .custom-dropdown {
+  width: 200px;
+  padding: 10px;
+  background: var(--secondary-bg);
+  border:none;
+  outline:none;
+}
+:host ::ng-deep .custom-dropdown span{
+  color:var(--main-text);
+
+}
+/* For custom color in dropdown items */
+:host ::ng-deep .custom-dropdown .p-dropdown-items .p-dropdown-item {
+  color:var(--main-text);
+  padding: 2px 0px;
+}
+
+/* For custom hover color in dropdown items */
+:host ::ng-deep .custom-dropdown .p-dropdown-items .p-dropdown-item:hover {
+  background-color: rgba(190, 190, 190, 0.62);
+
+}
+
+/* For custom padding in dropdown items */
+:host ::ng-deep .custom-dropdown .p-dropdown-items {
+  padding:0;
+  margin: 0;
+  background-color: var(--secondary-bg);
+}
+:host ::ng-deep .custom-dropdown .p-dropdown-items li{
+  background: transparent;
+}
+  /* For focused state of dropdown */
+:host ::ng-deep .custom-dropdown .p-dropdown:not(.p-disabled).p-focus {
+  outline: transparent;
+  box-shadow: none;
+}
+
+/**/
 main{
   background-color: var(--main-bg);
 }
@@ -15,7 +60,7 @@ main{
   align-items: center;
   justify-content: space-between;
   width: 250px;
-  padding: 5px 0;
+  padding: 10px;
   border-radius: 10px;
   background-color: var(--secondary-bg);
 }
@@ -61,5 +106,19 @@ main{
 @media (max-width: 600px) {
   .countries {
     grid-template-columns: 1fr;
+  }
+  .search-section{
+    flex-direction:column;
+    gap: 10px;
+    align-items:start;
+  }
+  .search-input{
+    width: 100%;
+  }
+
+}
+@media (max-width: 220px) {
+  :host ::ng-deep .custom-dropdown {
+    width: 100px;
   }
 }

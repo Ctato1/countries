@@ -1,0 +1,79 @@
+.main-card {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 250px !important;
+  height: 350px !important;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: var(--secondary-bg);
+}
+
+.main-card:hover {
+  transform: translateY(-5px);
+}
+
+.main-card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+}
+h4{
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--main-text) !important;
+}
+.card-info p,
+.card-info span{
+  padding: 0;
+  margin: 0;
+  font-size: .6rem;
+  color: var(--main-text) !important;
+}
+
+.info-item {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #555;
+}
+abbr {
+  text-decoration: none;
+  border: none;
+  cursor: default;
+}
+@media screen and (min-width: 425px){
+  .main-card {
+    width: 200px;
+    height: 300px;
+  }
+  .card-info p,
+  .card-info span{
+    font-size: .9rem;
+  }
+}
+@media screen and (min-width: 768px){
+
+  .card-info p,
+  .card-info span{
+    font-size: 1rem;
+  }
+}

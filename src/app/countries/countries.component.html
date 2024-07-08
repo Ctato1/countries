@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main>
-  <div class="container">
+  <div class="container ">
     <div class="search-section">
       <div class="search-input">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -16,6 +16,13 @@
         <option value=""></option>
       </select>
     </div>
+
+    <div class="countries">
+      <div class="country-card" *ngFor="let card of cards;let i = index">
+        <app-card [card]="card"></app-card>
+      </div>
+    </div>
   </div>
+
 
 </main>

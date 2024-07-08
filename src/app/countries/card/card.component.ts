@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Router, RouterModule} from "@angular/router";
 
 @Component({
   selector: 'app-card',
@@ -7,5 +8,11 @@ import {Component, Input} from '@angular/core';
 })
 export class CardComponent {
   @Input() card:any;
+
+  constructor(private  router:Router) {
+  }
+  onNavigate(){
+    this.router.navigate([this.card?.name])
+  }
 
 }

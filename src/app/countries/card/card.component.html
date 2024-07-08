@@ -1,12 +1,13 @@
 <!-- src/app/app.component.html -->
-  <abbr [title]="card.name">
-<div class="main-card">
-  <img [src]="card?.flags?.svg" [alt]="card.name">
-  <div class="card-info">
-    <h4 *ngIf="card?.name">{{ card?.name }}</h4>
-    <p class="info-item" *ngIf="card?.population"><span class="info-label">Population:</span> {{ card?.population | number }}</p>
-    <p class="info-item" *ngIf="card?.region"><span class="info-label">Region:</span> {{ card?.region }}</p>
-    <p class="info-item" *ngIf="card?.capital"><span class="info-label">Capital:</span> {{ card?.capital }}</p>
+<abbr [title]="card.name" (click)="onNavigate()">
+  <div class="main-card">
+    <img [src]="card?.flags?.svg" [alt]="card.name">
+    <div class="card-info">
+      <h4 *ngIf="card?.name">{{ card?.name }}</h4>
+      <p class="info-item" *ngIf="card?.population"><span
+        class="info-label">Population:</span> {{ card?.population | number }}</p>
+      <p class="info-item" *ngIf="card?.region"><span class="info-label">Region:</span> {{ card?.region }}</p>
+      <p class="info-item" *ngIf="card?.capital"><span class="info-label">Capital:</span> {{ card?.capital }}</p>
+    </div>
   </div>
-</div>
 </abbr>

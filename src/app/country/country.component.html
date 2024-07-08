@@ -1,2 +1,38 @@
 <app-header></app-header>
-<p>country works!</p>
+<div class="container">
+  <button class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path
+            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+    </svg>
+    Back
+  </button>
+  <div class="country">
+    <img [src]="countryInfo?.flags?.svg" [alt]="countryInfo?.name">
+    <div class="country-title">
+      <h3>{{ countryInfo?.name }}</h3>
+      <div class="country-info">
+        <div>
+          <p>Native Name: <span class="information">{{ countryInfo?.nativeName }}</span></p>
+          <p>Population: <span class="information">{{ countryInfo?.population | number }}</span></p>
+          <p>Region: <span class="information">{{ countryInfo?.region }}</span></p>
+          <p>Sub Region: <span class="information">{{ countryInfo?.subregion }}</span></p>
+          <p>Capital: <span class="information">{{ countryInfo?.capital }}</span></p>
+        </div>
+        <div>
+          <p>Top Level Domain: <span class="information"
+                                     *ngFor="let domain of countryInfo?.topLevelDomain">{{ domain }}</span></p>
+          <p>Currencies: <span class="information"
+                               *ngFor="let currency of countryInfo?.currencies">{{ currency.name | titlecase }}</span>
+          </p>
+          <p>Languages: <span class="information"
+                              *ngFor="let language of countryInfo?.languages;let i = index">{{ language?.name }}{{ i + 1 < countryInfo?.languages.length ? ', ' : '' }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="border-country">
+        <p>Border Countries: <span *ngFor="let borders of countryBorders;let i = index" class="border-btn">{{borders.name}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

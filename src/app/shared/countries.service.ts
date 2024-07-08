@@ -23,5 +23,16 @@ export class CountriesService implements OnInit {
     });
   }
 
+  getCardInfo(name:string){
+    return this.countries.find((item:any)=> item.name === name);
+  }
+
+  findBorder(country: any): any[] {
+    let countryBorders = country.borders.map((item: any) => item);
+    return countryBorders.reduce((acc: any[], item: string) => {
+      const borderCountries = this.countries.filter((country: any) => country.alpha3Code === item);
+      return acc.concat(borderCountries);
+    }, []);
+  }
 
 }

@@ -20,7 +20,6 @@ export class CountryComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.countriesService.getData();
     this.routeSubscription = this.route.params.subscribe(params => {
       this.countryInfo = this.countriesService.getCardInfo(params['id']);
       if (this.countryInfo?.borders !== undefined) {

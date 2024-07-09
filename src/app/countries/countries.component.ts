@@ -28,6 +28,7 @@ export class CountriesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.countriesService.getData();
     this.cards = this.countriesService.countries;
   }
 

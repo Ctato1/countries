@@ -21,7 +21,6 @@ export class CountryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.routeSubscription = this.route.params.subscribe(params => {
-      console.log(params['id'])
       this.countryInfo = this.countriesService.getCardInfo(params['id']);
       if (this.countryInfo?.borders !== undefined) {
         this.countryBorders = this.countriesService.findBorder(this.countryInfo)

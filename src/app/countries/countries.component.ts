@@ -29,7 +29,6 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit() {
     this.cards = this.countriesService.countries;
-
   }
 
   onChange() {
@@ -38,7 +37,6 @@ export class CountriesComponent implements OnInit {
   }
 
   onChangeContinents() {
-    console.log(this.selectedContinent)
     if (this.selectedContinent?.name === "All") {
       this.cards = this.countriesService.countries;
     } else {

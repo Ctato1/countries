@@ -10,7 +10,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     const theme:string | null = localStorage.getItem('theme')
-    console.log(theme)
     if(theme === 'dark'){
       document.documentElement.setAttribute("data-theme",'dark');
       this.isDark = true;

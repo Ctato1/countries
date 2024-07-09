@@ -13,7 +13,6 @@ export class CountryComponent implements OnInit, OnDestroy {
 
   private routeSubscription!: Subscription;
 
-  // currentCountry!: string;
   countryInfo: any;
   countryBorders!: any;
 
@@ -30,9 +29,6 @@ export class CountryComponent implements OnInit, OnDestroy {
         this.countryBorders = null;
       }
     })
-    // this.currentCountry = this.route.snapshot.params['id'];
-    console.log(this.countryInfo)
-    console.log(this.countryBorders)
   }
 
   ngOnDestroy() {

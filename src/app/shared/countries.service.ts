@@ -1,11 +1,11 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, take} from "rxjs";
+import {take} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CountriesService implements OnInit {
+export class CountriesService {
   private dataUrl: string = 'assets/data.json'; // Path to your JSON file
 
   public countries:any = []
@@ -13,9 +13,6 @@ export class CountriesService implements OnInit {
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit() {
-
-  }
 
   getData() {
     this.http.get<any>(this.dataUrl).pipe(take(1)).subscribe(countries => {

@@ -1,27 +1,31 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {take} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CountriesService {
+export class CountriesService implements OnInit {
   private dataUrl: string = 'assets/data.json'; // Path to your JSON file
 
-  public countries:any = []
+  public countries: any = []
 
   constructor(private http: HttpClient) {
   }
 
+  ngOnInit() {
+    this.getData();
+  }
 
   getData() {
-    this.http.get<any>(this.dataUrl).pipe(take(1)).subscribe(countries => {
+    console.log(this.dataUrl)
+    this.http.get<any>(this.dataUrl).subscribe(countries => {
       this.countries = countries
     });
   }
 
-  getCardInfo(name:string){
-    return this.countries.find((item:any)=> item.name === name);
+  getCardInfo(name: string) {
+    return this.countries.find((item: any) => item.name === name);
   }
 
   findBorder(country: any): any[] {

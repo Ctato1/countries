@@ -12,5 +12,6 @@ export class AppComponent implements OnInit{
   }
   ngOnInit() {
     this.countriesService.getData();
+    console.log(this.countriesService.countries)
   }
 }

@@ -1,34 +1,49 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CountriesService} from "../shared/countries.service";
 import {Subscription} from "rxjs";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrl: './country.component.css'
 })
-export class CountryComponent implements OnInit,OnDestroy {
+export class CountryComponent implements OnInit, OnDestroy {
 
-  private routeSubscription!:Subscription;
+  private routeSubscription!: Subscription;
 
   // currentCountry!: string;
-  countryInfo:any;
-  countryBorders!:any;
-  constructor(private route: ActivatedRoute,private countriesService:CountriesService) {
+  countryInfo: any;
+  countryBorders!: any;
+
+  constructor(private route: ActivatedRoute, private countriesService: CountriesService, private router: Router, private location: Location) {
   }
 
   ngOnInit() {
-    this.routeSubscription = this.route.params.subscribe(params=>{
+    this.routeSubscription = this.route.params.subscribe(params => {
       console.log(params['id'])
       this.countryInfo = this.countriesService.getCardInfo(params['id']);
-      this.countryBorders = this.countriesService.findBorder(this.countryInfo)
-      console.log(this.countryBorders)
+      if (this.countryInfo?.borders !== undefined) {
+        this.countryBorders = this.countriesService.findBorder(this.countryInfo)
+      }else{
+        this.countryBorders = null;
+      }
     })
     // this.currentCountry = this.route.snapshot.params['id'];
     console.log(this.countryInfo)
+    console.log(this.countryBorders)
   }
+
   ngOnDestroy() {
     this.routeSubscription.unsubscribe();
+  }
+
+  onNavigate(name: string): void {
+    this.router.navigate([`${name}`])
+  }
+
+  onBack(): void {
+    this.location.back();
   }
 }

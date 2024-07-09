@@ -28,7 +28,7 @@ export class CountriesService implements OnInit {
   }
 
   findBorder(country: any): any[] {
-    let countryBorders = country.borders.map((item: any) => item);
+    let countryBorders = country?.borders.map((item: any) => item);
     return countryBorders.reduce((acc: any[], item: string) => {
       const borderCountries = this.countries.filter((country: any) => country.alpha3Code === item);
       return acc.concat(borderCountries);

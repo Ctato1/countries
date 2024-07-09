@@ -57,11 +57,13 @@
 .border-country{
   display:flex;
   flex-direction:column;
+  flex-wrap:wrap;
   align-items:start;
   color:var(--main-text);
 }
 .border-country p{
   font-size:.7rem;
+  flex-wrap:wrap;
   display:flex;
   flex-direction:column;
   gap: 10px;
@@ -125,8 +127,12 @@
     flex-direction:row;
     flex-wrap:wrap;
   }
+  .border-country{
+    align-items:center;
+  }
 
   .border-country p{
+    width: 90%;
     font-size:.9rem;
     display:flex;
     align-items:center;
@@ -151,6 +157,9 @@
   }
   .country-info p{
     font-size: 1.1rem;
+  }
+  .border-country{
+    align-items:start;
   }
 }
 @media screen and (min-width: 1200px){

@@ -11,6 +11,6 @@ export class AppComponent implements OnInit{
   constructor(private countriesService:CountriesService) {
   }
   ngOnInit() {
-    // this.countriesService.getData();
+    this.countriesService.getData();
   }
 }

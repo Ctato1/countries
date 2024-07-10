@@ -1,6 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {take} from "rxjs";
+import {Observable, take, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +17,13 @@ export class CountriesService implements OnInit {
     this.getData();
   }
 
-  getData() {
-    this.http.get<any>(this.dataUrl).subscribe(countries => {
-      this.countries = countries
-    });
+  // getData() {
+  //   this.http.get<any>(this.dataUrl).subscribe(countries => {
+  //     this.countries = countries
+  //   });
+  // }
+  getData(): Observable<any> {
+    return this.http.get<any>(this.dataUrl).pipe(tap(res=> this.countries = res));
   }
 
   getCardInfo(name: string) {
